@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='initial-scale=1, maximum-scale=1'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <title>ELab Electronics Lab | GS8052 Op-Amp Practical Test</title>
+    <meta name="description" content="Practical test of the GS8052 operational amplifier, verifying 150MHz GBP bandwidth and PWM noise performance.">
+    <meta name="Keywords" content="data acquisition, op-amp, GS8052, test">
+
+    <link rel="preconnect" href="//g.alicdn.com">
+    <link rel="dns-prefetch" href="//g.alicdn.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+    <link rel='stylesheet' href='//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css'>
+    
+    <style>
+        .test-report p {
+            margin: 0.8em 0;
+            line-height: 1.8;
+            color: #333;
+        }
+        .test-report ul, .test-report ol {
+            padding-left: 1.8em;
+            margin: 0.8em 0;
+        }
+        .test-report li {
+            margin-bottom: 0.4em;
+            line-height: 1.8;
+        }
+        .test-report table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 14px;
+        }
+        .test-report th, .test-report td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .test-report th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+        .test-report tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        .test-report .section-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 1.2em 0 0.6em 0;
+            color: #222;
+            border-left: 4px solid #0366d6;
+            padding-left: 10px;
+        }
+        .test-report .formula {
+            text-align: center;
+            margin: 0.8em 0;
+            padding: 8px 0;
+            font-size: 1.05em;
+            color: #1a3d6e;
+            background: #f8faff;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+        .test-report .note {
+            font-size: 0.9em;
+            color: #666;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #0366d6;
+            margin: 0.8em 0;
+        }
+        .test-report .data-source {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .download-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .item-content.external {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+        .item-media {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .item-inner {
+            flex: 1;
+        }
+        .item-subtitle {
+            font-size: 14px;
+            color: #333;
+        }
+        .card-content-inner {
+            padding: 15px 20px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .card-header {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .test-report ul {
+            list-style: disc;
+        }
+        .test-report ul li {
+            margin-left: 0;
+        }
+        @media (max-width: 600px) {
+            .card-content-inner {
+                padding: 10px 12px;
+            }
+            .test-report table {
+                font-size: 12px;
+            }
+            .test-report th, .test-report td {
+                padding: 5px 6px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        var targetProtocol = "https:";
+        if (window.location.protocol != targetProtocol)
+            window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);
+    </script>
+</head>
+<body>
+
+<div class='page-group'>
+    <div class='page page-current' id='page-hm'>
+        <header class='bar bar-nav'>
+            <h1 class='title'>ELab Electronics Lab</h1>
+        </header>
+
+        <div class='content'>
+            <div class='content-block'>
+                <div class='list-block'>
+                    <div class="card">
+                        <div class="card-header">📘 GS8052 Op-Amp Practical Test</div>
+                        <div class="card-content">
+                            <div class="card-content-inner test-report">
+                                <!-- Main Content in English -->
+                                <h3 style="margin-top:0;">GS8052 Op-Amp Practical Test: 150MHz GBP Bandwidth Verification and PWM Noise Measurement</h3>
+                                
+                                <div class="section-title">Test Background</div>
+                                <p>This test aims to verify the key performance specifications of the domestic GS8052 operational amplifier, particularly its rated 150MHz Gain-Bandwidth Product (GBP), through a real-world amplification chain. The published data of the international counterpart AD8052 is used as a performance reference for comparison.</p>
+
+                                <div class="section-title">Test Chain and Conditions</div>
+                                <p>A three-stage cascaded amplification structure was used, with the following signal chain:</p>
+                                <ul>
+                                    <li><strong>Stage 1</strong>: Inverting amplifier using GS8052, gain of 100x (Rf=100kΩ, Rin=100Ω).</li>
+                                    <li><strong>Stage 2</strong>: Inverting amplifier using GS8052, gain of 100x (Rf=100kΩ, Rin=100Ω).</li>
+                                    <li><strong>Stage 3</strong>: A GS8052 configured as a voltage follower on the ELab platform, used for buffering and driving the ADC input.</li>
+                                    <li><strong>Total Gain</strong>: The overall chain gain was set to approximately 100x (40dB) via inter-stage coupling and input attenuation network, to balance high gain with bandwidth test feasibility.</li>
+                                </ul>
+                                <p>Probe compensation and ground loop effects were carefully managed. Data obtained are comparative and primarily used for trend analysis.</p>
+
+                                <div class="section-title">Frequency Response and Bandwidth Measurement</div>
+                                <p>Using the ELab platform's built-in signal generator (with ~5kΩ output impedance) to drive the circuit, combined with LTSpice simulation and practical frequency sweep, results are as follows:</p>
+                                <ul>
+                                    <li><strong>Low-Frequency Gain</strong>: Near 10kHz, the gain curve approaches the 40dB baseline (corresponding to the designed total gain of 100x).</li>
+                                    <li><strong>High-Frequency Roll-off</strong>: The gain begins to drop by about 1dB from the DC gain value at approximately 0.8MHz~1MHz. The -3dB point of this chain occurs at approximately 1.5MHz.</li>
+                                    <li><strong>GBP Calculation</strong>: For a total gain of 100x, the effective GBP at the 1.5MHz -3dB bandwidth is:</li>
+                                </ul>
+                                <div class="formula">GBP = 100 × 1.5 MHz = 150 MHz</div>
+                                <ul>
+                                    <li>This calculated value closely matches the GS8052 datasheet specification (150MHz), confirming the bandwidth performance of the op-amp.</li>
+                                </ul>
+
+                                <div class="section-title">PWM Application and Noise Performance</div>
+                                <p>Under 10kHz and 20kHz PWM signal excitation:</p>
+                                <ul>
+                                    <li><strong>Output Noise</strong>: Measured output noise was approximately 5mV (peak-to-peak).</li>
+                                    <li><strong>Input-Referred Noise</strong>: Calculated using the total gain of 100x, the input-referred noise is:</li>
+                                </ul>
+                                <div class="formula">Input-Referred Noise = 5 mV / 100 = 50 μV</div>
+                                <ul>
+                                    <li>This level is within an acceptable range for typical op-amp applications, indicating the GS8052 has good noise characteristics in PWM applications.</li>
+                                </ul>
+
+                                <div class="section-title">Core Comparison</div>
+                                <table>
+                                    <thead>
+                                        <tr><th>Parameter</th><th>GS8052 (This Test)</th><th>AD8052 (Datasheet Reference)</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><strong>Gain-Bandwidth Product (GBP)</strong></td><td><strong>150MHz</strong> (Derived from test)</td><td>80MHz</td></tr>
+                                        <tr><td>-3dB Bandwidth (for G=100)</td><td><strong>1.5MHz</strong> (Measured)</td><td>~0.8MHz (Theoretical)</td></tr>
+                                    </tbody>
+                                </table>
+                                <div class="note">📌 Note: AD8052 parameters are from its datasheet (typical values) for reference. Theoretical calculation based on GBP conservation: Bandwidth = GBP / Gain.</div>
+
+                                <p><strong>Result Analysis:</strong></p>
+                                <ul>
+                                    <li><strong>Significant Bandwidth Advantage</strong>: At the 100x gain setting used in this test, the GS8052's measured effective bandwidth (1.5MHz) is approximately 87% higher than the theoretical value of the AD8052 (~0.8MHz), mainly due to its higher GBP rating (150MHz vs 80MHz).</li>
+                                    <li><strong>Validation of Physical Law</strong>: The measured bandwidth aligns with the GBP theoretical value, verifying the physical principle of GBP conservation.</li>
+                                    <li><strong>Core Value</strong>: The domestic GS8052 offers superior bandwidth over the international AD8052 (150MHz vs 80MHz) at a more competitive cost, providing a cost-effective domestic alternative for high-bandwidth signal processing applications.</li>
+                                </ul>
+
+                                <div class="section-title">Test Notes</div>
+                                <p>This sweep used 100 points (from 10kHz to higher frequencies) and is intended for trend reference. For higher precision bandwidth boundary testing, it is recommended to use more than 200 sweep points and employ more precise signal sources and probes.</p>
+                                <!-- End of Main Content -->
+
+                                <hr style="margin: 20px 0 10px 0; border: 0; border-top: 1px solid #eee;">
+                                <div class="download-row">
+                                    <a href="https://www.bilibili.com/opus/956129667997237266" 
+                                       class="item-content external"
+                                       onclick="window.open(this.href,'_blank');return false;">
+                                        <div class="item-media">📄</div>
+                                        <div class="item-inner">
+                                            <div class="item-subtitle">View Original Test Data</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer no-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script>
+    $.init();
+</script>
+
+</body>
+</html>
