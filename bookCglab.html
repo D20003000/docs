@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='initial-scale=1, maximum-scale=1'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <title>Cglab 荧光光谱仪 | 碳量子点定量探究实验</title>
+    <meta name="description" content="基于Cglab荧光光谱仪的碳量子点定量探究实验方案，验证比尔-朗伯定律在荧光分析中的应用。">
+   
+    <link rel="preconnect" href="//g.alicdn.com">
+    <link rel="dns-prefetch" href="//g.alicdn.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+    <link rel='stylesheet' href='//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css'>
+    
+    <style>
+        /* 自定义样式 - 优化内容展示 */
+        .experiment-report p {
+            margin: 0.8em 0;
+            line-height: 1.8;
+            color: #333;
+        }
+        .experiment-report ul, .experiment-report ol {
+            padding-left: 1.8em;
+            margin: 0.8em 0;
+        }
+        .experiment-report li {
+            margin-bottom: 0.4em;
+            line-height: 1.8;
+        }
+        .experiment-report table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 14px;
+        }
+        .experiment-report th, .experiment-report td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        .experiment-report th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+        .experiment-report .highlight {
+            background-color: #fff9e0;
+        }
+        .experiment-report .section-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 1.2em 0 0.6em 0;
+            color: #222;
+            border-left: 4px solid #2c7a3e;
+            padding-left: 10px;
+        }
+        .experiment-report .formula {
+            text-align: center;
+            margin: 0.8em 0;
+            padding: 8px 0;
+            font-size: 1.05em;
+            color: #1a4d2e;
+            background: #f8fff8;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+        .experiment-report .note {
+            font-size: 0.9em;
+            color: #666;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #2c7a3e;
+            margin: 0.8em 0;
+        }
+        .download-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #0366d6;
+            background-color: #f6f8fa;
+            transition: background-color 0.2s;
+            font-size: 14px;
+        }
+        .download-link:hover {
+            background-color: #e1e4e8;
+            text-decoration: none;
+        }
+        .download-icon {
+            margin-right: 6px;
+            font-size: 14px;
+        }
+        .item-content.external {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+        .item-media {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .item-inner {
+            flex: 1;
+        }
+        .item-subtitle {
+            font-size: 14px;
+            color: #333;
+        }
+        .card-content-inner {
+            padding: 15px 20px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .card-header {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        /* 针对报告内列表的额外优化 */
+        .experiment-report ul {
+            list-style: disc;
+        }
+        .experiment-report ul li {
+            margin-left: 0;
+        }
+        /* 手机适配 */
+        @media (max-width: 600px) {
+            .card-content-inner {
+                padding: 10px 12px;
+            }
+            .experiment-report table {
+                font-size: 12px;
+            }
+            .experiment-report th, .experiment-report td {
+                padding: 4px 6px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        var targetProtocol = "https:";
+        if (window.location.protocol != targetProtocol)
+            window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);
+    </script>
+</head>
+<body>
+
+<div class='page-group'>
+    <div class='page page-current' id='page-hm'>
+        <header class='bar bar-nav'>
+            <h1 class='title'>Cglab 920 荧光光谱仪</h1>
+        </header>
+
+        <div class='content'>
+            <div class='content-block'>
+                <div class='list-block'>
+                    <div class="card">
+                        <div class="card-header">🧪 Cglab 920 光谱实验</div>
+                        <div class="card-content">
+                            <div class="card-content-inner experiment-report">
+                                <!-- 正文开始 -->
+                                <h3 style="margin-top:0;">基于Cglab荧光光谱仪的碳量子点定量探究实验方案</h3>
+                                <p style="color: #555; font-size: 0.95em;">用于验证荧光强度与碳量子点浓度之间的线性关系</p>
+                                
+                                <div class="section-title">一、实验目的</div>
+                                <p>本实验旨在利用Cglab荧光光谱仪，通过配制不同浓度的碳量子点溶液，验证荧光强度与物质浓度之间的线性关系，并探究比尔-朗伯定律在荧光分析中的适用边界。</p>
+
+                                <div class="section-title">二、实验原理</div>
+                                <p><strong>1. 碳量子点的制备与荧光特性</strong><br>
+                                糖类在高温条件下发生脱水和碳化反应，生成表面富含羟基、羧基等含氧官能团的纳米级碳颗粒（碳量子点）。在390 nm紫外光激发下，这些碳量子点能够发射出稳定的蓝绿色荧光，其荧光强度与溶液中发光粒子的数量呈正相关。</p>
+                                <p><strong>2. 荧光分析中的比尔-朗伯定律</strong><br>
+                                在稀溶液条件下，荧光强度 F 与荧光物质的浓度 c 及吸光度 A 之间存在正比关系，可表达为：</p>
+                                <div class="formula">F = K · c</div>
+                                <p>即在一定浓度范围内，荧光强度与浓度呈线性关系。但当溶液浓度过高时，由于内滤效应（激发光被溶液自身吸收或发射光被再吸收），荧光强度会出现偏离线性甚至下降的现象。</p>
+
+                                <div class="section-title">三、实验材料与仪器</div>
+                                <ul>
+                                    <li><strong>实验材料</strong>：白砂糖、蒸馏水、石英比色皿（方形）、量筒、烧杯、玻璃棒、滤纸</li>
+                                    <li><strong>主要仪器</strong>：Cglab荧光光谱仪（含390 nm紫外激发光源）、电子天平、加热设备</li>
+                                </ul>
+
+                                <div class="section-title">四、实验步骤</div>
+                                <p><strong>1. 碳量子点原液制备</strong><br>
+                                取烤至焦红的糖块1.0 g，溶于100 mL蒸馏水中，搅拌10分钟助溶。静置冷却后过滤，所得滤液即为碳量子点原液（标记为浓度 C₀），溶液呈淡琥珀色。</p>
+                                <p><strong>2. 配制浓度梯度稀释液</strong><br>
+                                取5个洁净比色皿，按以下比例配制稀释液：</p>
+                                <table>
+                                    <thead><tr><th>编号</th><th>原液体积 (mL)</th><th>蒸馏水体积 (mL)</th><th>相对浓度 (c)</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>1 (空白)</td><td>0</td><td>4</td><td>0</td></tr>
+                                        <tr><td>2</td><td>1</td><td>3</td><td>0.25</td></tr>
+                                        <tr><td>3</td><td>2</td><td>2</td><td>0.50</td></tr>
+                                        <tr><td>4</td><td>3</td><td>1</td><td>0.75</td></tr>
+                                        <tr><td>5</td><td>4</td><td>0</td><td>1.00</td></tr>
+                                    </tbody>
+                                </table>
+                                <p><strong>3. 荧光强度测定</strong><br>
+                                （1）将比色皿依次放入Cglab光谱仪样品池；<br>
+                                （2）开启390 nm紫外激发光源；<br>
+                                （3）设置设备放大倍率为607，依次读取各编号样品的荧光强度值（示例数据见下表）：</p>
+                                <table>
+                                    <thead><tr><th>编号</th><th>相对浓度 (c)</th><th>荧光强度 (F)</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>0</td><td>300</td></tr>
+                                        <tr><td>2</td><td>0.25</td><td>600</td></tr>
+                                        <tr><td>3</td><td>0.50</td><td>750</td></tr>
+                                        <tr><td>4</td><td>0.75</td><td>800</td></tr>
+                                        <tr><td>5</td><td>1.00</td><td>1020</td></tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="section-title">五、数据处理与分析</div>
+                                <p>以相对浓度 c 为横坐标、荧光强度 F 为纵坐标，绘制散点图并进行线性拟合。</p>
+                                <ul>
+                                    <li><strong>线性验证</strong>：在低浓度区（通常取前4个点），若 R² > 0.97，则认为荧光强度与浓度符合比尔-朗伯定律的线性关系。</li>
+                                    <li><strong>拟合方程</strong>：计算线性回归方程 F = k·c + b，其中斜率 k 可反映碳量子点的表观量子产率（相对值）。</li>
+                                    <li><strong>偏差观察</strong>：观察第5点（高浓度原液）是否偏离拟合直线。若其荧光强度低于线性预测值甚至低于中浓度样品，则为内滤效应的典型表现。</li>
+                                </ul>
+
+                                <div class="section-title">六、预期结果与讨论</div>
+                                <ul>
+                                    <li>低浓度区（c = 0 ~ 0.75）荧光强度随浓度线性增加，验证比尔-朗伯定律在稀溶液中的适用性。</li>
+                                    <li>高浓度区（c = 1.00）若出现荧光强度增长趋缓或下降，说明内滤效应开始主导，这揭示了荧光分析中浓度上限的物理限制。</li>
+                                    <li>通过本实验，可直观理解"荧光强度与浓度线性相关"这一结论的<strong>成立条件与适用范围</strong>，为后续定量分析实验奠定方法论基础。</li>
+                                </ul>
+                                <!-- 正文结束 -->
+
+                                <!-- 下载和链接区域（保留示例） -->
+                                <hr style="margin: 20px 0 10px 0; border: 0; border-top: 1px solid #eee;">
+                                <div class="download-row">
+                                    <a href="https://www.bilibili.com/video/BV1Jx95BgEhY" 
+                                       class="item-content external"
+                                        onclick="window.open(this.href,'_blank');return false;">
+                                        <div class="item-media">📊</div>
+                                        <div class="item-inner">
+                                            <div class="item-subtitle">查看原始测试记录</div>
+                                        </div>
+                                    </a>
+                                </div>
+                               <hr style="margin: 20px 0 10px 0; border: 0; border-top: 1px solid #eee;">
+                                <div class="download-row">
+                                    <a href="https://qiftech.cn" 
+                                       class="item-content external"
+                                        onclick="window.open(this.href,'_blank');return false;">
+                                        <div class="item-media">📊</div>
+                                        <div class="item-inner">
+                                            <div class="item-subtitle">home</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer no-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script>
+    $.init();
+</script>
+
+</body>
+</html>
