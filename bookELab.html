@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='initial-scale=1, maximum-scale=1'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <title>ELab 电子实验室 | 8052运放实战测试</title>
+    <meta name="description" content="8052运放实战测试">
+    <meta name="Keywords" content="数据采集设备">
+
+    <link rel="preconnect" href="//g.alicdn.com">
+    <link rel="dns-prefetch" href="//g.alicdn.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+    <link rel='stylesheet' href='//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css'>
+    
+    <style>
+        .test-report p {
+            margin: 0.8em 0;
+            line-height: 1.8;
+            color: #333;
+        }
+        .test-report ul, .test-report ol {
+            padding-left: 1.8em;
+            margin: 0.8em 0;
+        }
+        .test-report li {
+            margin-bottom: 0.4em;
+            line-height: 1.8;
+        }
+        .test-report table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 14px;
+        }
+        .test-report th, .test-report td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .test-report th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+        .test-report tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        .test-report .section-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 1.2em 0 0.6em 0;
+            color: #222;
+            border-left: 4px solid #0366d6;
+            padding-left: 10px;
+        }
+        .test-report .formula {
+            text-align: center;
+            margin: 0.8em 0;
+            padding: 8px 0;
+            font-size: 1.05em;
+            color: #1a3d6e;
+            background: #f8faff;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+        .test-report .note {
+            font-size: 0.9em;
+            color: #666;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #0366d6;
+            margin: 0.8em 0;
+        }
+        .test-report .data-source {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .download-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .item-content.external {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+        .item-media {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .item-inner {
+            flex: 1;
+        }
+        .item-subtitle {
+            font-size: 14px;
+            color: #333;
+        }
+        .card-content-inner {
+            padding: 15px 20px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .card-header {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .test-report ul {
+            list-style: disc;
+        }
+        .test-report ul li {
+            margin-left: 0;
+        }
+        @media (max-width: 600px) {
+            .card-content-inner {
+                padding: 10px 12px;
+            }
+            .test-report table {
+                font-size: 12px;
+            }
+            .test-report th, .test-report td {
+                padding: 5px 6px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        var targetProtocol = "https:";
+        if (window.location.protocol != targetProtocol)
+            window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);
+    </script>
+</head>
+<body>
+
+<div class='page-group'>
+    <div class='page page-current' id='page-hm'>
+        <header class='bar bar-nav'>
+            <h1 class='title'>ELab 电子实验室</h1>
+        </header>
+
+        <div class='content'>
+            <div class='content-block'>
+                <div class='list-block'>
+                    <div class="card">
+                        <div class="card-header">📘 8052运放实战测试</div>
+                        <div class="card-content">
+                            <div class="card-content-inner test-report">
+                                <!-- 正文开始 -->
+                                <h3 style="margin-top:0;">国产GS8052运放实战测试：150MHz GBP带宽验证与PWM噪声实测</h3>
+                                
+                                <div class="section-title">测试背景</div>
+                                <p>本次测试旨在通过实际搭建的放大链路，验证国产GS8052运算放大器的关键性能指标，特别是其标称的150MHz增益带宽积（GBP），并以国际主流产品AD8052的公开数据作为性能对比参考。</p>
+
+                                <div class="section-title">测试链路与条件</div>
+                                <p>采用三级级联放大结构，具体信号链如下：</p>
+                                <ul>
+                                    <li><strong>第一级</strong>：GS8052构成反相放大器，增益为100倍（Rf=100kΩ, Rin=100Ω）</li>
+                                    <li><strong>第二级</strong>：GS8052构成反相放大器，增益为100倍（Rf=100kΩ, Rin=100Ω）</li>
+                                    <li><strong>第三级</strong>：利用ELab电子实验室平台内部的GS8052配置为电压跟随器，用于缓冲并驱动后级ADC采集</li>
+                                    <li><strong>总增益配置</strong>：通过级间耦合与输入端的衰减网络，将整体链路总增益设定为约100倍（40dB），以兼顾高增益与带宽测试的可行性。</li>
+                                </ul>
+                                <p>测试中已充分考虑探头补偿及接地回路的影响，所得数据均为相对比较值，侧重于趋势分析。</p>
+
+                                <div class="section-title">频率响应与带宽实测</div>
+                                <p>使用ELab平台内置信号源（含约5kΩ内阻）驱动电路，结合LTSpice仿真与实物扫频对比，结果如下：</p>
+                                <ul>
+                                    <li><strong>低频增益</strong>：在10kHz附近，增益曲线接近40dB基准线（对应于设定的总增益100倍）。</li>
+                                    <li><strong>高频滚降</strong>：增益在约0.8MHz~1MHz频段开始从直流增益值下降约1dB；在约1.5MHz时，增益下降至-3dB点，即该链路的小信号带宽。</li>
+                                    <li><strong>GBP计算</strong>：对于总增益为100倍的链路，1.5MHz处的-3dB带宽对应的有效增益带宽积为：</li>
+                                </ul>
+                                <div class="formula">GBP = 100 × 1.5 MHz = 150 MHz</div>
+                                <ul>
+                                    <li>该计算值与GS8052数据手册标称值（150MHz）高度吻合，验证了该运放带宽指标的真实性。</li>
+                                </ul>
+
+                                <div class="section-title">PWM应用与噪声表现</div>
+                                <p>在10kHz和20kHz的PWM信号激励下：</p>
+                                <ul>
+                                    <li><strong>输出端噪声</strong>：实测输出噪声约为5mV（峰峰值）。</li>
+                                    <li><strong>输入等效噪声</strong>：按总增益100倍折算，输入等效噪声约为：</li>
+                                </ul>
+                                <div class="formula">输入等效噪声 = 5 mV / 100 = 50 μV</div>
+                                <ul>
+                                    <li>该量级在典型运放应用场景中属于可接受范围，表明GS8052在PWM应用中的噪声特性良好。</li>
+                                </ul>
+
+                                <div class="section-title">核心对比</div>
+                                <table>
+                                    <thead>
+                                        <tr><th>参数</th><th>国产 GS8052 (本次实测)</th><th>国际 AD8052 (数据手册参考)</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><strong>增益带宽积 (GBP)</strong></td><td><strong>150MHz</strong> (实测推算)</td><td>80MHz</td></tr>
+                                        <tr><td>-3dB带宽 (本链路G=100)</td><td><strong>1.5MHz</strong> (实测)</td><td>约0.8MHz (理论推算)</td></tr>
+                                    </tbody>
+                                </table>
+                                <div class="note">📌 说明：AD8052参数来源于数据手册公开标称值（典型值），非本次实测数据。理论推算基于GBP守恒原则：带宽 = GBP / 增益。</div>
+
+                                <p><strong>结果分析：</strong></p>
+                                <ul>
+                                    <li><strong>带宽优势显著</strong>：在本测试的100倍增益设置下，GS8052的实测有效带宽（1.5MHz）相比AD8052的理论推算值（约0.8MHz）高出约87%，这主要得益于其更高的GBP标称值（150MHz vs 80MHz）。</li>
+                                    <li><strong>物理规律验证</strong>：实测带宽与GBP理论值吻合，验证了运放GBP守恒的物理规律。</li>
+                                    <li><strong>核心价值</strong>：国产GS8052在带宽指标上优于国际主流产品AD8052（150MHz vs 80MHz），且成本更具优势，为高带宽信号处理应用提供了高性价比的国产替代方案。</li>
+                                </ul>
+
+                                <div class="section-title">测试说明</div>
+                                <p>本次扫频点数为100点（10kHz至更高频段），主要作为趋势参考。如需更高精度的带宽边界测试，建议增加扫描点数至200点以上，并采用更精密的信号源和探头。</p>
+                                <!-- 正文结束 -->
+
+                                <hr style="margin: 20px 0 10px 0; border: 0; border-top: 1px solid #eee;">
+                                <div class="download-row">
+                                    <a href="https://www.bilibili.com/opus/956129667997237266" 
+                                       class="item-content external"
+                                       onclick="window.open(this.href,'_blank');return false;">
+                                        <div class="item-media">📄</div>
+                                        <div class="item-inner">
+                                            <div class="item-subtitle">查看原始测试记录</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+ <hr style="margin: 20px 0 10px 0; border: 0; border-top: 1px solid #eee;">
+                                <div class="download-row">
+                                    <a href="https://qiftech.cn" 
+                                       class="item-content external"
+                                        onclick="window.open(this.href,'_blank');return false;">
+                                        <div class="item-media">📊</div>
+                                        <div class="item-inner">
+                                            <div class="item-subtitle">home</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer no-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script>
+    $.init();
+</script>
+
+</body>
+</html>
