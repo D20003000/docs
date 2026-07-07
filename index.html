@@ -1,276 +1,672 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="Cache" content="no-cache">
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"> 
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='initial-scale=1, maximum-scale=1'>
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='apple-mobile-web-app-status-bar-style' content='black'>
-    <title>Cglab Fluorescence Spectrometer | Quantitative Experiment on Carbon Quantum Dots</title>
-    <meta name="description" content="A laboratory protocol using the Cglab Fluorescence Spectrometer to quantitatively explore carbon quantum dots and validate the Beer-Lambert Law.">
+  <title>Guangzhou Qingfeng Technology | Miniature Spectrometers & Smart Lab Platforms - Cglab & ELab</title>
+    <meta name="description" content="Guangzhou Qingfeng Technology focuses on miniature spectrometers and smart experimental platforms. Cglab portable spectral detection, ELab open AI algorithm interface, providing lightweight high-precision solutions for research and education.">
    
-    <link rel="preconnect" href="//g.alicdn.com">
-    <link rel="dns-prefetch" href="//g.alicdn.com">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
-    <link rel='stylesheet' href='//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css'>
+    <meta name="Keywords" content="data acquisition equipment">
     
-    <style>
-        /* Custom Styles - Optimized for content display */
-        .experiment-report p {
-            margin: 0.8em 0;
-            line-height: 1.8;
-            color: #333;
-        }
-        .experiment-report ul, .experiment-report ol {
-            padding-left: 1.8em;
-            margin: 0.8em 0;
-        }
-        .experiment-report li {
-            margin-bottom: 0.4em;
-            line-height: 1.8;
-        }
-        .experiment-report table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-            font-size: 14px;
-        }
-        .experiment-report th, .experiment-report td {
-            border: 1px solid #ddd;
-            padding: 8px 10px;
-            text-align: left;
-        }
-        .experiment-report th {
-            background-color: #f2f2f2;
-            font-weight: 600;
-        }
-        .experiment-report .highlight {
-            background-color: #fff9e0;
-        }
-        .experiment-report .section-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            margin: 1.2em 0 0.6em 0;
-            color: #222;
-            border-left: 4px solid #2c7a3e;
-            padding-left: 10px;
-        }
-        .experiment-report .formula {
-            text-align: center;
-            margin: 0.8em 0;
-            padding: 8px 0;
-            font-size: 1.05em;
-            color: #1a4d2e;
-            background: #f8fff8;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 0.5px;
-        }
-        .experiment-report .note {
-            font-size: 0.9em;
-            color: #666;
-            background: #f8f9fa;
-            padding: 8px 12px;
-            border-radius: 4px;
-            border-left: 3px solid #2c7a3e;
-            margin: 0.8em 0;
-        }
-        .download-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: flex-start;
-            align-items: center;
-            margin: 10px 0;
-        }
-        .download-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 12px;
-            border: 1px solid #e1e4e8;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #0366d6;
-            background-color: #f6f8fa;
-            transition: background-color 0.2s;
-            font-size: 14px;
-        }
-        .download-link:hover {
-            background-color: #e1e4e8;
-            text-decoration: none;
-        }
-        .download-icon {
-            margin-right: 6px;
-            font-size: 14px;
-        }
-        .item-content.external {
-            display: flex;
-            align-items: center;
-            padding: 10px 0;
-            text-decoration: none;
-        }
-        .item-media {
-            margin-right: 10px;
-            font-size: 20px;
-        }
-        .item-inner {
-            flex: 1;
-        }
-        .item-subtitle {
-            font-size: 14px;
-            color: #333;
-        }
-        .card-content-inner {
-            padding: 15px 20px;
-        }
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .card-header {
-            font-weight: 600;
-            font-size: 16px;
-        }
-        .experiment-report ul {
-            list-style: disc;
-        }
-        .experiment-report ul li {
-            margin-left: 0;
-        }
-        @media (max-width: 600px) {
-            .card-content-inner {
-                padding: 10px 12px;
-            }
-            .experiment-report table {
-                font-size: 12px;
-            }
-            .experiment-report th, .experiment-report td {
-                padding: 4px 6px;
-            }
-        }
-    </style>
+  
+         <!-- 
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    Cache Control -->
+        <!-- Language -->
+    
+  <link rel="preconnect" href="//g.alicdn.com">
+  <link rel="dns-prefetch" href="//g.alicdn.com">
+    <!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+<link rel='stylesheet' href='//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css'>
+    <link rel='stylesheet' href='./js/q.css'>
+ 
+
+    <link rel='stylesheet' href='//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css'>
+  <link rel='stylesheet' href='./js/q.css'>
 
     <script type="text/javascript">
-        var targetProtocol = "https:";
-        if (window.location.protocol != targetProtocol)
-            window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);
-    </script>
+var targetProtocol = "https:";
+if (window.location.protocol != targetProtocol)
+ window.location.href = targetProtocol +
+  window.location.href.substring(window.location.protocol.length);
+</script>
+
+<style>
+/* Mobile adaptation core styles */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{padding:10px;font-size:14px;}
+/* outer scroll container, prevents horizontal overflow on mobile */
+.table-wrap{overflow-x:auto;width:100%;}
+table{border-collapse:collapse;min-width:600px;width:100%;}
+th,td{border:1px solid #333;padding:8px 6px;}
+th{background:#eee;}
+</style>
+
+  <base target="_blank">
 </head>
-<body>
+  <div class='page-group'>
 
-<div class='page-group'>
-    <div class='page page-current' id='page-hm'>
-        <header class='bar bar-nav'>
-            <h1 class='title'>Cglab 920 Fluorescence Spectrometer</h1>
-        </header>
+     <div class='page page-current' id='page-hm' >
+      <header class='bar bar-nav'>
 
-        <div class='content'>
-            <div class='content-block'>
-                <div class='list-block'>
-                    <div class="card">
-                        <div class="card-header">🧪 Cglab 920 Spectroscopy Experiment</div>
-                        <div class="card-content">
-                            <div class="card-content-inner experiment-report">
-                                <!-- Main Content in English -->
-                                <h3 style="margin-top:0;">Quantitative Exploration of Carbon Quantum Dots Using Cglab Fluorescence Spectrometer</h3>
-                                <p style="color: #555; font-size: 0.95em;">A laboratory protocol to validate the linear relationship between fluorescence intensity and concentration.</p>
-                                
-                                <div class="section-title">I. Objective</div>
-                                <p>This experiment aims to use the Cglab Fluorescence Spectrometer to prepare carbon quantum dot solutions at various concentrations, verify the linear relationship between fluorescence intensity and concentration, and explore the applicable boundaries of the Beer-Lambert Law in fluorescence analysis.</p>
+<a class="button button-link button-nav pull-left external" href="https://qiftech.cn">
+  <span style="font-size: 24px;"> &nbsp ⫶</span>
+</a> 
+     <h1 class='title'>Product Overview</h1>
+      </header>
+    </nav>
+      
+  <div  class='content' >
+        <div class='content-block'>
+  <div class='list-block'>
 
-                                <div class="section-title">II. Principles</div>
-                                <p><strong>1. Synthesis and Fluorescence of Carbon Quantum Dots</strong><br>
-                                Sugars undergo dehydration and carbonization at high temperatures, forming nanoscale carbon particles (carbon quantum dots) with rich oxygen-containing functional groups (e.g., hydroxyl, carboxyl). When excited by 390 nm UV light, these dots emit stable blue-green fluorescence. The fluorescence intensity is directly proportional to the number of emitting particles in the solution.</p>
-                                <p><strong>2. Beer-Lambert Law in Fluorescence Analysis</strong><br>
-                                In dilute solutions, the fluorescence intensity (F) is proportional to the concentration (c) of the fluorescent substance, which can be expressed as:</p>
-                                <div class="formula">F = K · c</div>
-                                <p>However, at high concentrations, the inner filter effect (where the solution absorbs the excitation or emitted light) will cause the intensity to deviate from linearity or even decrease.</p>
 
-                                <div class="section-title">III. Materials and Instruments</div>
-                                <ul>
-                                    <li><strong>Materials:</strong> White granulated sugar, distilled water, quartz cuvettes (square), graduated cylinders, beakers, glass rods, filter paper.</li>
-                                    <li><strong>Main Instruments:</strong> Cglab Fluorescence Spectrometer (with 390 nm UV excitation source), electronic balance, heating equipment.</li>
-                                </ul>
 
-                                <div class="section-title">IV. Procedure</div>
-                                <p><strong>1. Preparation of Stock Solution</strong><br>
-                                Dissolve 1.0 g of caramelized sugar in 100 mL distilled water, stir for 10 minutes to aid dissolution. Cool and filter. The filtrate is the stock solution (marked as concentration C₀), appearing light amber.</p>
-                                <p><strong>2. Preparation of Dilution Series</strong><br>
-                                Prepare dilutions in 5 clean cuvettes according to the table below:</p>
-                                <table>
-                                    <thead><tr><th>No.</th><th>Stock Solution (mL)</th><th>Distilled Water (mL)</th><th>Relative Concentration (c)</th></tr></thead>
-                                    <tbody>
-                                        <tr><td>1 (Blank)</td><td>0</td><td>4</td><td>0</td></tr>
-                                        <tr><td>2</td><td>1</td><td>3</td><td>0.25</td></tr>
-                                        <tr><td>3</td><td>2</td><td>2</td><td>0.50</td></tr>
-                                        <tr><td>4</td><td>3</td><td>1</td><td>0.75</td></tr>
-                                        <tr><td>5</td><td>4</td><td>0</td><td>1.00</td></tr>
-                                    </tbody>
-                                </table>
-                                <p><strong>3. Measurement of Fluorescence Intensity</strong><br>
-                                (1) Place cuvettes into the Cglab spectrometer sample holder sequentially.<br>
-                                (2) Turn on the 390 nm UV excitation source.<br>
-                                (3) Set the device gain to 607 and record the fluorescence intensity for each sample (example data table below):</p>
-                                <table>
-                                    <thead><tr><th>No.</th><th>Relative Concentration (c)</th><th>Fluorescence Intensity (F)</th></tr></thead>
-                                    <tbody>
-                                        <tr><td>1</td><td>0</td><td>300</td></tr>
-                                        <tr><td>2</td><td>0.25</td><td>600</td></tr>
-                                        <tr><td>3</td><td>0.50</td><td>750</td></tr>
-                                        <tr><td>4</td><td>0.75</td><td>800</td></tr>
-                                        <tr><td>5</td><td>1.00</td><td>1020</td></tr>
-                                    </tbody>
-                                </table>
+<div class="card">
+    <div class="card-header">Miniature Spectrometers</div>
+    <div class="card-content">
+      <div class="card-content-inner">  
 
-                                <div class="section-title">V. Data Processing and Analysis</div>
-                                <p>Plot a scatter graph with <strong>Relative Concentration (c)</strong> on the x-axis and <strong>Fluorescence Intensity (F)</strong> on the y-axis, and perform a linear fit.</p>
-                                <ul>
-                                    <li><strong>Verification of Linearity:</strong> In the low-concentration region (typically the first 4 points), if R² > 0.97, the relationship is considered linear, confirming the Beer-Lambert Law.</li>
-                                    <li><strong>Regression Equation:</strong> Calculate the linear regression equation F = k·c + b. The slope <strong>k</strong> can be interpreted as the relative apparent quantum yield of the carbon quantum dots.</li>
-                                    <li><strong>Deviation Observation:</strong> Observe whether the 5th point (the stock solution) deviates from the fitted line. If its intensity is lower than predicted or even lower than a mid-concentration sample, it indicates the inner filter effect.</li>
-                                </ul>
 
-                                <div class="section-title">VI. Expected Results and Discussion</div>
-                                <ul>
-                                    <li>In the low-concentration range (c = 0 ~ 0.75), fluorescence intensity increases linearly with concentration, validating the Beer-Lambert Law for dilute solutions.</li>
-                                    <li>At high concentrations (c = 1.00), if the fluorescence intensity growth slows or decreases, it demonstrates the dominance of the inner filter effect, revealing the physical limit of concentration in fluorescence analysis.</li>
-                                    <li>This experiment provides an intuitive understanding of the <strong>conditions and scope</strong> of the linear relationship between fluorescence and concentration, establishing a methodological foundation for future quantitative analysis.</li>
-                                </ul>
-                                <!-- End of Main Content -->
 
-                                <!-- Download and Link Section (Keep as is) -->
-                                <hr style="margin: 20px 0 10px 0; border: 0; border-top: 1px solid #eee;">
-                                <div class="download-row">
-                                    <a href="https://www.bilibili.com/video/BV1Jx95BgEhY" 
-                                       class="item-content external"
-                                        onclick="window.open(this.href,'_blank');return false;">
-                                        <div class="item-media">📊</div>
-                                        <div class="item-inner">
-                                            <div class="item-subtitle">View Original Test Data</div>
-                                        </div>
-                                    </a>
-                                </div>
+<p>The Cglab560/920 series are open multi-optical-path fluorescence spectrometers, supporting fluorescence emission spectrum scanning and quantitative analysis in the 380–1000 nm range. Standardly equipped with a 390 nm fixed-wavelength light source (near-UV/violet region) for weak excitation of low-cost classic UV dyes such as DAPI and Hoechst, and customizable with 375, 405, 450 nm modules to suit mainstream blue-light dyes like SYBR Green and FAM.</p>
+<p>The system measures one standard fluorescence cuvette per run, and supports high-speed network interface for multi-unit cascading and real-time distributed data aggregation.</p>
+<p>Applications:</p>
+<p>    Life Sciences: preliminary screening of cell nuclear fluorescent labels (DAPI/Hoechst weak excitation; 375 nm module recommended for routine detection), enzyme kinetics mechanism studies, near-UV and blue-violet excited probe screening. Protein detection requires specific probes and corresponding excitation modules.</p>
+<p>    Education & Research: spectral teaching labs, qualitative substance identification, fluorescence quantum yield measurement, quantitative concentration analysis (standard curve method, internal standard method).</p>
+<p>    Industrial Testing: semi-quantitative analysis of vitamins, tetracycline drug residues, environmental pollutants; fat, chlorophyll (450 nm module recommended for better excitation efficiency), and spoiled food fluorescence discrimination and rapid quality screening.</p>
+<p>The system offers open TCP data upload, Python/R/MATLAB/LabVIEW interfaces, built-in Web API and intelligent algorithms, supporting Windows/Ubuntu dual system. Expandable with polarization detection and various optical configurations to broadly meet the needs of teaching, research, life sciences, and industrial testing.</p>
 
-                            </div>
-                        </div>
-                        <div class="card-footer no-border"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+ </div>
     </div>
+ 
+
+
+
+<div class="card-footer no-border">
+ </div>
+ </div>
+
+
+
+
+
+
+ <div class="card">
+    <div class="card-header"> Cglab Fluorescence Spectrometer Comparison</div>
+    <div class="card-content">
+      <div class="card-content-inner">  
+
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+<table style="border-collapse:collapse;width:100%;min-width:640px;font-size:13px;line-height:1.5;">
+  <thead>
+  <tr style="background:#f5f5f5;">
+    <th style="border:1px solid #999;padding:8px;text-align:left;font-weight:bold;white-space:nowrap;">Parameter / Feature</th>
+    <th style="border:1px solid #999;padding:8px;text-align:left;font-weight:bold;">Cglab 920</th>
+    <th style="border:1px solid #999;padding:8px;text-align:left;font-weight:bold;">Cglab 920_BLE</th>
+    <th style="border:1px solid #999;padding:8px;text-align:left;font-weight:bold;">Cglab 920L</th>
+    <th style="border:1px solid #999;padding:8px;text-align:left;font-weight:bold;">Cglab 560</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Product Name</td>
+    <td style="border:1px solid #999;padding:8px;">Fluorescence Spectrometer</td>
+    <td style="border:1px solid #999;padding:8px;">Fluorescence Spectrometer (Bluetooth for mobile)</td>
+    <td style="border:1px solid #999;padding:8px;">Laser-Induced Fluorescence (LIF) Spectrometer</td>
+    <td style="border:1px solid #999;padding:8px;">Fluorescence Spectrometer</td>
+  </tr>
+  <tr style="background:#fafafa;">
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Spectral Range</td>
+    <td style="border:1px solid #999;padding:8px;">380 nm – 1000 nm</td>
+    <td style="border:1px solid #999;padding:8px;">380 nm – 1000 nm</td>
+    <td style="border:1px solid #999;padding:8px;">380 nm – 1000 nm</td>
+    <td style="border:1px solid #999;padding:8px;">400 nm – 700 nm</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Data Resolution</td>
+    <td style="border:1px solid #999;padding:8px;">12 bit</td>
+    <td style="border:1px solid #999;padding:8px;">12 bit</td>
+    <td style="border:1px solid #999;padding:8px;">12 bit</td>
+    <td style="border:1px solid #999;padding:8px;">8 bit</td>
+  </tr>
+  <tr style="background:#fafafa;">
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Spectral Resolution</td>
+    <td style="border:1px solid #999;padding:8px;">Best 6 nm / Typical 15 nm</td>
+    <td style="border:1px solid #999;padding:8px;">Best 6 nm / Typical 15 nm</td>
+    <td style="border:1px solid #999;padding:8px;">Best 6 nm / Typical 15 nm</td>
+    <td style="border:1px solid #999;padding:8px;">Typical 20 nm</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Excitation Source Type</td>
+    <td style="border:1px solid #999;padding:8px;">LED / Laser Diode (LD)</td>
+    <td style="border:1px solid #999;padding:8px;">LED / Laser Diode (LD)</td>
+    <td style="border:1px solid #999;padding:8px;">Laser Diode (LD)</td>
+    <td style="border:1px solid #999;padding:8px;">LED</td>
+  </tr>
+  <tr style="background:#fafafa;">
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Standard Excitation Wavelength</td>
+    <td style="border:1px solid #999;padding:8px;">390 nm</td>
+    <td style="border:1px solid #999;padding:8px;">390 nm</td>
+    <td style="border:1px solid #999;padding:8px;">405 nm</td>
+    <td style="border:1px solid #999;padding:8px;">390 nm</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Output Power</td>
+    <td style="border:1px solid #999;padding:8px;">300 mW – 1 W</td>
+    <td style="border:1px solid #999;padding:8px;">300 mW – 1 W</td>
+    <td style="border:1px solid #999;padding:8px;">300 mW – 1 W</td>
+    <td style="border:1px solid #999;padding:8px;">100 mW – 1 W</td>
+  </tr>
+  <tr style="background:#fafafa;">
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Optical Configuration</td>
+    <td style="border:1px solid #999;padding:8px;">Reflective</td>
+    <td style="border:1px solid #999;padding:8px;">Reflective</td>
+    <td style="border:1px solid #999;padding:8px;">Beamsplitter coaxial reflective</td>
+    <td style="border:1px solid #999;padding:8px;">Reflective</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Special Optical Hardware</td>
+    <td style="border:1px solid #999;padding:8px;">—</td>
+    <td style="border:1px solid #999;padding:8px;">—</td>
+    <td style="border:1px solid #999;padding:8px;">External objective module</td>
+    <td style="border:1px solid #999;padding:8px;">—</td>
+  </tr>
+  <tr style="background:#fafafa;">
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Unique Features</td>
+    <td style="border:1px solid #999;padding:8px;">—</td>
+    <td style="border:1px solid #999;padding:8px;">Mobile Bluetooth, field-ready</td>
+    <td style="border:1px solid #999;padding:8px;">Laser-induced, common-path optics</td>
+    <td style="border:1px solid #999;padding:8px;">Two resolution modes</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Software Interfaces</td>
+    <td style="border:1px solid #999;padding:8px;">Python/MATLAB/LabVIEW</td>
+    <td style="border:1px solid #999;padding:8px;">Same as left</td>
+    <td style="border:1px solid #999;padding:8px;">Same as left</td>
+    <td style="border:1px solid #999;padding:8px;">Same as left</td>
+  </tr>
+  <tr style="background:#fafafa;">
+    <td style="border:1px solid #999;padding:8px;white-space:nowrap;">Hardware Expandability</td>
+    <td style="border:1px solid #999;padding:8px;">Optional excitation wavelength accessories/filters/polarization components</td>
+    <td style="border:1px solid #999;padding:8px;">Same as left</td>
+    <td style="border:1px solid #999;padding:8px;">Same as left</td>
+    <td style="border:1px solid #999;padding:8px;">—</td>
+  </tr>
+  </tbody>
+</table>
 </div>
+
+
+ </div>
+</div>
+
+
+<div class="card-footer no-border">
+ </div>
+ </div>
+ 
+
+ <div class="card">
+    <div class="card-header">Cglab 920</div>
+    <div class="card-content">
+      <div class="card-content-inner">  
+
+<p>Cglab 920 LED-induced Fluorescence Spectrometer</p>
+<p>Parameter Specification</p>
+<p>Spectral Range 300 nm – 1000 nm</p>
+<p>Data Resolution 12 bit</p>
+<p>Spectral Resolution 2 nm–15 nm (1000 pixels)</p>
+<p>Excitation Type Narrowband LED</p>
+<p>Standard Excitation Wavelength 390 nm</p>
+<p>Optional Excitation Wavelengths 375, 405, 450; Raman extension: 638, 785 nm</p>
+<p>Optional notch filters, bandpass filters, and polarization components</p>
+<p>Output Power 300 mW – 1 W</p>
+<p>Optical Configuration Reflective</p>
+<p>Sample Compartment Standard 12×12 mm cuvette</p>
+<p>Data Interface USB</p>
+<p>Software Support Windows/Ubuntu, including TCP network data server and database software, providing Python/R/MATLAB/LabVIEW interfaces</p>
+
+ </div>
+    </div>
+ 
+<ul>
+ <div class="row">
+      <div class="col-3">
+             <div class="item-media">
+               </div>
+            <div class="item-inner">
+            </div>
+      </div>
+<div class="col-30">
+ <a href="https://qiftech.cn/doc/qiftech.cn.lab.Cglab920.v1.2025.03.pdf" 
+   class="item-content external"
+   onclick="window.open(this.href,'_blank');return false;">
+    <div class="item-media">
+      📄
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Brochure</div>
+    </div>
+  </a> 
+</div>
+
+<div class="col-30">
+  <a href="https://www.bilibili.com/read/readlist/rl1023641"
+   class="item-content external" 
+   onclick="window.open(this.href,'_blank');return false;">
+    <div class="item-media">
+      🎬
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Videos</div>
+    </div>
+  </a> 
+</div>
+
+<div class="col-30">
+  <a href="https://qiftech.cn/download.html" class="item-content external" onclick="window.open(this.href,'_blank');return false;">
+  
+    <div class="item-media">
+      ⏬
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Downloads</div>
+    </div>
+  </a> 
+</div>
+</ul>
+
+<div class="card-footer no-border">
+ </div>
+ </div>
+
+
+
+
+ <div class="card">
+    <div class="card-header">Cglab 920L</div>
+    <div class="card-content">
+      <div class="card-content-inner">  
+<p>Cglab 920L Laser-Induced Fluorescence Spectrometer (LIF Spectrometer)</p>
+<p>Parameter  Specification</p>
+<p>Spectral Range 380 nm – 1000 nm</p>
+<p>Data Resolution 12 bit</p>
+<p>Spectral Resolution Best 6 nm, Typical 15 nm (1000 pixels)</p>
+<p>Excitation Type Semiconductor laser diode</p>
+<p>Standard Excitation Wavelength 405 nm</p>
+<p>Optional Excitation Wavelengths 375, 405, 450; Raman extension: 638, 785 nm</p>
+<p>Output Power 300 mW – 1 W</p>
+<p>Optical Configuration Beamsplitter coaxial reflective, excitation and collection common-path</p>
+<p>Objective External objective module (optional)</p>
+<p>Sample Compartment Standard 12×12 mm cuvette</p>
+<p>Data Interface USB</p>
+<p>Software Support Windows/Ubuntu, providing Python/R/MATLAB/LabVIEW interfaces</p>
+<p>Note: Standard configuration is optimized for fluorescence detection; with hardware expansion it can support SERS, resonance Raman, and other Raman-type measurements. Optional notch filters, bandpass filters, and polarization components for corresponding wavelengths are available.</p>
+
+ </div>
+    </div>
+ 
+<ul>
+ <div class="row">
+      <div class="col-3">
+             <div class="item-media">
+               </div>
+            <div class="item-inner">
+            </div>
+      </div>
+<div class="col-30">
+ <a href="https://qiftech.cn/doc/qiftech.cn.lab.Cglab920L.v1.2025.03.pdf" 
+   class="item-content external"
+   onclick="window.open(this.href,'_blank');return false;">
+    <div class="item-media">
+      📄
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Brochure</div>
+    </div>
+  </a> 
+</div>
+
+<div class="col-30">
+  <a href="https://www.bilibili.com/read/readlist/rl1023641"
+   class="item-content external" 
+   onclick="window.open(this.href,'_blank');return false;">
+    <div class="item-media">
+      🎬
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Videos</div>
+    </div>
+  </a> 
+</div>
+
+<div class="col-30">
+  <a href="https://qiftech.cn/download.html" class="item-content external" onclick="window.open(this.href,'_blank');return false;">
+  
+    <div class="item-media">
+      ⏬
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Downloads</div>
+    </div>
+  </a> 
+</div>
+</ul>
+
+<div class="card-footer no-border">
+ </div>
+ </div>
+
+
+
+
+ <div class="card">
+    <div class="card-header">Cglab 560</div>
+    <div class="card-content">
+      <div class="card-content-inner">  
+<p>Cglab 560 LED-induced Fluorescence Spectrometer</p>        
+<p>Parameter  Specification</p>
+<p>Spectral Range 400nm - 700nm</p>
+<p>Data Resolution 8 bit</p>
+<p>Mode 1 resolution: 1000 pix; Mode 2 resolution: 2300 pix.</p>
+<p>Excitation Type LED</p>
+<p>Standard Excitation Wavelength 390 nm</p>
+<p>Output Power 100 mW – 1 W (continuously adjustable)</p>
+<p>Optical Configuration Reflective</p>
+<p>Sample Compartment Standard 12×12 mm cuvette</p>
+<p>Data Interface USB</p>
+<p>Software Support Windows/Ubuntu, including TCP network data server and database software, providing Python/R/MATLAB/LabVIEW interfaces</p>
+
+ </div>
+    </div>
+ 
+<ul>
+ <div class="row">
+      <div class="col-3">
+             <div class="item-media">
+               </div>
+            <div class="item-inner">
+            </div>
+      </div>
+<div class="col-30">
+   <a href="https://qiftech.cn/doc/qiftech.cn.lab.Cglab560.v1.2025.03.pdf" 
+   class="item-content external"
+   onclick="window.open(this.href,'_blank');return false;">
+    <div class="item-media">
+      📄
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Brochure</div>
+    </div>
+  </a> 
+</div>
+
+<div class="col-30">
+  <a href="https://www.bilibili.com/read/readlist/rl1023641"
+   class="item-content external" 
+   onclick="window.open(this.href,'_blank');return false;">
+    <div class="item-media">
+      🎬
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Videos</div>
+    </div>
+  </a> 
+</div>
+
+<div class="col-30">
+  <a href="https://qiftech.cn/download.html" class="item-content external" onclick="window.open(this.href,'_blank');return false;">
+  
+    <div class="item-media">
+      ⏬
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Downloads</div>
+    </div>
+  </a> 
+</div>
+</ul>
+
+<div class="card-footer no-border">
+ </div>
+ </div>
+
+
+      <div class="card">
+    <div class="card-header">Other Resources</div>
+    <div class="card-content">
+      <div class="card-content-inner">  
+ 
+</div>
+    </div>
+ 
+<ul>
+    <div class="row">
+    <div class="col-3">
+             <div class="item-media">
+               </div>
+            <div class="item-inner">
+                    </div>
+      </div>
+
+      <div class="col-97">
+  <a href="https://qiftech.cn/doc/MATLB.2025.03.pdf" class="item-content external"
+  onclick="window.open(this.href,'_blank');return false;">
+            <div class="item-media">
+              📄
+            </div>
+            <div class="item-inner">
+              <div class="item-subtitle">Data Processing & Visualization </div>
+            </div>
+         </a> 
+
+      </div>
+
+
+      
+    </div>  
+</ul>
+
+
+<div class="card-footer no-border">
+ </div>
+ </div>
+
+
+
+
+
+
+<div class="card">
+    <div class="card-header">Microfluidic Accessories for Spectrometers</div>
+    <div class="card-content">
+      <div class="card-content-inner">  
+<p>Cglab dedicated microfluidic carriers,</p>        
+<p>Suitable for organoids, paper-based microfluidics,微量 analysis, UV, fluorescence, etc.</p>
+<p>Transparent resin (350nm-1000nm), polyurethane elastomer, etc.; shapes and materials customizable.</p>        
+
+ </div>
+    </div>
+ 
+<ul>
+ <div class="row">
+      <div class="col-3">
+             <div class="item-media">
+               </div>
+            <div class="item-inner">
+            </div>
+      </div>
+<div class="col-30">
+   <a href="https://qiftech.cn/doc/microfluidics.2025.03.pdf" 
+   class="item-content external"
+   onclick="window.open(this.href,'_blank');return false;">
+    <div class="item-media">
+      📄
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Brochure</div>
+    </div>
+  </a> 
+</div>
+
+<div class="col-30">
+  <a href="https://www.bilibili.com/read/readlist/rl1023641"
+   class="item-content external" 
+   onclick="window.open(this.href,'_blank');return false;">
+    <div class="item-media">
+      🎬
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Videos</div>
+    </div>
+  </a> 
+</div>
+
+
+<div class="col-30">
+  <a href="https://qiftech.cn/download.html" class="item-content external" onclick="window.open(this.href,'_blank');return false;">
+  
+    <div class="item-media">
+      ⏬
+    </div>
+    <div class="item-inner">
+      <div class="item-subtitle">Downloads</div>
+    </div>
+  </a> 
+</div>
+</ul>
+
+<div class="card-footer no-border">
+ </div>
+ </div>
+
+
+
+
+<div class="card">
+    <div class="card-header">ELab Electronic Lab</div>
+    <div class="card-content">
+      <div class="card-content-inner">  
+         
+<p>Purpose: Closed-loop testing of electronic components and modules, including Bode plots, FFT spectrum, frequency sweeps, voltage sweeps, MATLAB synchronous online acquisition and debugging, etc.</p>  
+<p>Input impedance 300k-2M || 10 pF.</p>  
+<p>Measurable input signal range 0V / 100V.</p>  
+<p>Two-channel input with 12-bit ADC.</p>  
+<p>Selectable sampling rates (50 kS/s ... 15 MS/s) for input voltage sampling.</p>  
+<p>Output: two channels OUT1,2 in parallel output, each channel also contains two sub-channels in parallel.</p>  
+<p>OUT1,2 can output 3V, 1k-0.7M square waves with adjustable duty cycle and phase.</p>  
+<p>Also provides 0V-3V, 100Hz-30kHz sine/triangle/arbitrary waveforms.</p>  
+<p>Provides 2.5V, 5V output current measurement, supports closed-loop testing of 5V electronic modules; 5V output max 50mA.</p>  
+<p>Multiple USB devices can be connected in parallel; data can be uploaded in real-time via TCP to a server,</p>  
+<p>Data can be cascaded and aggregated; server can easily interface with Python/R/MATLAB/LabVIEW mathematical software.</p>  
+<p>Provides APIs for secondary development, with Ubuntu and Windows versions.</p>  
+<p>Input voltage: 5V.</p>
+
+ </div>
+    </div>
+ 
+<ul>
+    <div class="row">
+            <div class="col-3">
+             <div class="item-media">
+               </div>
+            <div class="item-inner">
+                    </div>
+      </div>
+
+      <div class="col-30">
+  <a href="https://qiftech.cn/doc/qiftech.cn.lab.ELabv1.2023.09.pdf" class="item-content external"
+  onclick="window.open(this.href,'_blank');return false;">
+            <div class="item-media">
+          📄
+            </div>
+            <div class="item-inner">
+              <div class="item-subtitle">Brochure</div>
+            </div>
+         </a> 
+
+      </div>
+
+      <div class="col-30">
+  <a href="https://www.bilibili.com/read/readlist/rl838930" class="item-content external"
+  onclick="window.open(this.href,'_blank');return false;">
+            <div class="item-media">
+             🎬
+            </div>
+            <div class="item-inner">
+              <div class="item-subtitle">Videos</div>
+            </div>
+         </a> 
+
+      </div>
+            <div class="col-30">
+               <a href="https://qiftech.cn/download.html" class="item-content external"
+               onclick="window.open(this.href,'_blank');return false;">
+            <div class="item-media">
+      ⏬
+
+            </div>
+            <div class="item-inner">
+              <div class="item-subtitle">Downloads</div>
+            </div>
+  </a> 
+      </div>
+
+</ul>
+
+<!--
+Removed commented-out product sections for cleaner translation
+-->
+
+<div class="card-footer no-border">
+ </div>
+ </div>
+ 
+
+
+
+
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+</div>
+
 
 <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script>
-    $.init();
-</script>
 
+<script>
+
+
+
+   $(document).on('click', {
+    foo: "test"
+  }, tHandler);
+
+  function tHandler(event) {
+    console.log("id", event.target.id, "name", event.target.tagName, "className", event.target.className, "innerHTML", event.target.innerHTML, "foo", event.data.foo);
+  }
+
+$.init();
+</script>
 </body>
 </html>
