@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='initial-scale=1, maximum-scale=1'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <title>Cglab Fluorescence Spectrometer | Quantitative Experiment on Carbon Quantum Dots</title>
+    <meta name="description" content="A laboratory protocol using the Cglab Fluorescence Spectrometer to quantitatively explore carbon quantum dots and validate the Beer-Lambert Law.">
+   
+    <link rel="preconnect" href="//g.alicdn.com">
+    <link rel="dns-prefetch" href="//g.alicdn.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+    <link rel='stylesheet' href='//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css'>
+    
+    <style>
+        /* Custom Styles - Optimized for content display */
+        .experiment-report p {
+            margin: 0.8em 0;
+            line-height: 1.8;
+            color: #333;
+        }
+        .experiment-report ul, .experiment-report ol {
+            padding-left: 1.8em;
+            margin: 0.8em 0;
+        }
+        .experiment-report li {
+            margin-bottom: 0.4em;
+            line-height: 1.8;
+        }
+        .experiment-report table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 14px;
+        }
+        .experiment-report th, .experiment-report td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        .experiment-report th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+        .experiment-report .highlight {
+            background-color: #fff9e0;
+        }
+        .experiment-report .section-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 1.2em 0 0.6em 0;
+            color: #222;
+            border-left: 4px solid #2c7a3e;
+            padding-left: 10px;
+        }
+        .experiment-report .formula {
+            text-align: center;
+            margin: 0.8em 0;
+            padding: 8px 0;
+            font-size: 1.05em;
+            color: #1a4d2e;
+            background: #f8fff8;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+        .experiment-report .note {
+            font-size: 0.9em;
+            color: #666;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #2c7a3e;
+            margin: 0.8em 0;
+        }
+        .download-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #0366d6;
+            background-color: #f6f8fa;
+            transition: background-color 0.2s;
+            font-size: 14px;
+        }
+        .download-link:hover {
+            background-color: #e1e4e8;
+            text-decoration: none;
+        }
+        .download-icon {
+            margin-right: 6px;
+            font-size: 14px;
+        }
+        .item-content.external {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+        .item-media {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .item-inner {
+            flex: 1;
+        }
+        .item-subtitle {
+            font-size: 14px;
+            color: #333;
+        }
+        .card-content-inner {
+            padding: 15px 20px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .card-header {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .experiment-report ul {
+            list-style: disc;
+        }
+        .experiment-report ul li {
+            margin-left: 0;
+        }
+        @media (max-width: 600px) {
+            .card-content-inner {
+                padding: 10px 12px;
+            }
+            .experiment-report table {
+                font-size: 12px;
+            }
+            .experiment-report th, .experiment-report td {
+                padding: 4px 6px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        var targetProtocol = "https:";
+        if (window.location.protocol != targetProtocol)
+            window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);
+    </script>
+</head>
+<body>
+
+<div class='page-group'>
+    <div class='page page-current' id='page-hm'>
+        <header class='bar bar-nav'>
+            <h1 class='title'>Cglab 920 Fluorescence Spectrometer</h1>
+        </header>
+
+        <div class='content'>
+            <div class='content-block'>
+                <div class='list-block'>
+                    <div class="card">
+                        <div class="card-header">🧪 Cglab 920 Spectroscopy Experiment</div>
+                        <div class="card-content">
+                            <div class="card-content-inner experiment-report">
+                                <!-- Main Content in English -->
+                                <h3 style="margin-top:0;">Quantitative Exploration of Carbon Quantum Dots Using Cglab Fluorescence Spectrometer</h3>
+                                <p style="color: #555; font-size: 0.95em;">A laboratory protocol to validate the linear relationship between fluorescence intensity and concentration.</p>
+                                
+                                <div class="section-title">I. Objective</div>
+                                <p>This experiment aims to use the Cglab Fluorescence Spectrometer to prepare carbon quantum dot solutions at various concentrations, verify the linear relationship between fluorescence intensity and concentration, and explore the applicable boundaries of the Beer-Lambert Law in fluorescence analysis.</p>
+
+                                <div class="section-title">II. Principles</div>
+                                <p><strong>1. Synthesis and Fluorescence of Carbon Quantum Dots</strong><br>
+                                Sugars undergo dehydration and carbonization at high temperatures, forming nanoscale carbon particles (carbon quantum dots) with rich oxygen-containing functional groups (e.g., hydroxyl, carboxyl). When excited by 390 nm UV light, these dots emit stable blue-green fluorescence. The fluorescence intensity is directly proportional to the number of emitting particles in the solution.</p>
+                                <p><strong>2. Beer-Lambert Law in Fluorescence Analysis</strong><br>
+                                In dilute solutions, the fluorescence intensity (F) is proportional to the concentration (c) of the fluorescent substance, which can be expressed as:</p>
+                                <div class="formula">F = K · c</div>
+                                <p>However, at high concentrations, the inner filter effect (where the solution absorbs the excitation or emitted light) will cause the intensity to deviate from linearity or even decrease.</p>
+
+                                <div class="section-title">III. Materials and Instruments</div>
+                                <ul>
+                                    <li><strong>Materials:</strong> White granulated sugar, distilled water, quartz cuvettes (square), graduated cylinders, beakers, glass rods, filter paper.</li>
+                                    <li><strong>Main Instruments:</strong> Cglab Fluorescence Spectrometer (with 390 nm UV excitation source), electronic balance, heating equipment.</li>
+                                </ul>
+
+                                <div class="section-title">IV. Procedure</div>
+                                <p><strong>1. Preparation of Stock Solution</strong><br>
+                                Dissolve 1.0 g of caramelized sugar in 100 mL distilled water, stir for 10 minutes to aid dissolution. Cool and filter. The filtrate is the stock solution (marked as concentration C₀), appearing light amber.</p>
+                                <p><strong>2. Preparation of Dilution Series</strong><br>
+                                Prepare dilutions in 5 clean cuvettes according to the table below:</p>
+                                <table>
+                                    <thead><tr><th>No.</th><th>Stock Solution (mL)</th><th>Distilled Water (mL)</th><th>Relative Concentration (c)</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>1 (Blank)</td><td>0</td><td>4</td><td>0</td></tr>
+                                        <tr><td>2</td><td>1</td><td>3</td><td>0.25</td></tr>
+                                        <tr><td>3</td><td>2</td><td>2</td><td>0.50</td></tr>
+                                        <tr><td>4</td><td>3</td><td>1</td><td>0.75</td></tr>
+                                        <tr><td>5</td><td>4</td><td>0</td><td>1.00</td></tr>
+                                    </tbody>
+                                </table>
+                                <p><strong>3. Measurement of Fluorescence Intensity</strong><br>
+                                (1) Place cuvettes into the Cglab spectrometer sample holder sequentially.<br>
+                                (2) Turn on the 390 nm UV excitation source.<br>
+                                (3) Set the device gain to 607 and record the fluorescence intensity for each sample (example data table below):</p>
+                                <table>
+                                    <thead><tr><th>No.</th><th>Relative Concentration (c)</th><th>Fluorescence Intensity (F)</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>0</td><td>300</td></tr>
+                                        <tr><td>2</td><td>0.25</td><td>600</td></tr>
+                                        <tr><td>3</td><td>0.50</td><td>750</td></tr>
+                                        <tr><td>4</td><td>0.75</td><td>800</td></tr>
+                                        <tr><td>5</td><td>1.00</td><td>1020</td></tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="section-title">V. Data Processing and Analysis</div>
+                                <p>Plot a scatter graph with <strong>Relative Concentration (c)</strong> on the x-axis and <strong>Fluorescence Intensity (F)</strong> on the y-axis, and perform a linear fit.</p>
+                                <ul>
+                                    <li><strong>Verification of Linearity:</strong> In the low-concentration region (typically the first 4 points), if R² > 0.97, the relationship is considered linear, confirming the Beer-Lambert Law.</li>
+                                    <li><strong>Regression Equation:</strong> Calculate the linear regression equation F = k·c + b. The slope <strong>k</strong> can be interpreted as the relative apparent quantum yield of the carbon quantum dots.</li>
+                                    <li><strong>Deviation Observation:</strong> Observe whether the 5th point (the stock solution) deviates from the fitted line. If its intensity is lower than predicted or even lower than a mid-concentration sample, it indicates the inner filter effect.</li>
+                                </ul>
+
+                                <div class="section-title">VI. Expected Results and Discussion</div>
+                                <ul>
+                                    <li>In the low-concentration range (c = 0 ~ 0.75), fluorescence intensity increases linearly with concentration, validating the Beer-Lambert Law for dilute solutions.</li>
+                                    <li>At high concentrations (c = 1.00), if the fluorescence intensity growth slows or decreases, it demonstrates the dominance of the inner filter effect, revealing the physical limit of concentration in fluorescence analysis.</li>
+                                    <li>This experiment provides an intuitive understanding of the <strong>conditions and scope</strong> of the linear relationship between fluorescence and concentration, establishing a methodological foundation for future quantitative analysis.</li>
+                                </ul>
+                                <!-- End of Main Content -->
+
+                                <!-- Download and Link Section (Keep as is) -->
+                                <hr style="margin: 20px 0 10px 0; border: 0; border-top: 1px solid #eee;">
+                                <div class="download-row">
+                                    <a href="https://www.bilibili.com/video/BV1Jx95BgEhY" 
+                                       class="item-content external"
+                                        onclick="window.open(this.href,'_blank');return false;">
+                                        <div class="item-media">📊</div>
+                                        <div class="item-inner">
+                                            <div class="item-subtitle">View Original Test Data</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer no-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script>
+    $.init();
+</script>
+
+</body>
+</html>
